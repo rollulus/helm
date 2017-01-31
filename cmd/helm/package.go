@@ -184,7 +184,7 @@ func (p *packageCmd) clearsign(filename string) error {
 		fmt.Fprintln(p.out, sig)
 	}
 
-	return ioutil.WriteFile(filename+".prov", []byte(sig), 0755)
+	return ioutil.WriteFile(filename+".prov", []byte(sig), 0644)
 }
 
 // promptUser implements provenance.PassphraseFetcher

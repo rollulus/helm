@@ -95,5 +95,5 @@ func index(dir, url, mergeTo string) error {
 		i.Merge(i2)
 	}
 	i.SortEntries()
-	return i.WriteFile(out, 0755)
+	return i.WriteFile(out, 0644)
 }

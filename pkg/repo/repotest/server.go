@@ -101,7 +101,7 @@ func (s *Server) CopyCharts(origin string) ([]string, error) {
 		if err != nil {
 			return []string{}, err
 		}
-		if err := ioutil.WriteFile(newname, data, 0755); err != nil {
+		if err := ioutil.WriteFile(newname, data, 0644); err != nil {
 			return []string{}, err
 		}
 		copied[i] = newname
@@ -125,7 +125,7 @@ func (s *Server) CreateIndex() error {
 	}
 
 	ifile := filepath.Join(s.docroot, "index.yaml")
-	return ioutil.WriteFile(ifile, d, 0755)
+	return ioutil.WriteFile(ifile, d, 0644)
 }
 
 func (s *Server) start() {
